@@ -1,0 +1,9 @@
+---
+- hosts: provisioner
+  roles:
+    - ubuntu
+    - terraform
+    - packer
+    - ansible
+    - ovftool
+  tags: provisioner

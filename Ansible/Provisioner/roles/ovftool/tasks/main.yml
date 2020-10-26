@@ -1,0 +1,12 @@
+---
+- name: Make OVF Tool binary executable
+  file: dest=/resources/ovftool.bundle mode=a+x
+
+- name: Install OVF Tool
+  become: yes
+  shell: "/resources/ovftool.bundle --eulas-agreed --required --console"
+  register: ovftool_install
+  failed_when: "'error' in ovftool_install.stderr"
+
+- name: Test that OVF Tool works
+  command: "ovftool --help"

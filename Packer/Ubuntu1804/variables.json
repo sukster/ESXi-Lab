@@ -1,0 +1,7 @@
+{
+    "esxi_host": "192.168.2.203",
+    "esxi_datastore": "Local_NVMe",
+    "esxi_username": "root",
+    "esxi_password": "",
+    "esxi_network_with_dhcp_and_internet": "VM Network"
+}

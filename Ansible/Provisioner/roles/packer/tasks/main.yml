@@ -1,0 +1,7 @@
+---
+- name: Install Packer
+  unarchive:
+    src: https://releases.hashicorp.com/packer/1.6.4/packer_1.6.4_linux_amd64.zip
+    dest: /usr/local/bin
+    remote_src: True
+  become: yes

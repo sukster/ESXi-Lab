@@ -1,0 +1,57 @@
+---
+
+- name: Set hostname
+  hostname:
+    name: provisioner
+  become: yes
+
+- name: Create a directory if it does not exist
+  file:
+    path: /vagrant
+    state: directory
+    mode: '0755'
+  become: yes
+
+- name: Copy local resources directory to root directory
+  synchronize:
+    src: ./resources
+    dest: /
+  become: yes
+
+- name: Copy the netplan file over as root
+  shell: "mv /resources/01-netcfg.yaml /etc/netplan/01-netcfg.yaml"
+  become: yes
+
+- name: Apply the new netplan
+  shell: netplan apply
+  become: yes
+
+- name: Add default gateway
+  become: yes
+  command: "route add default gw 192.168.2.254"
+
+- name: Update the MOTD
+  args: 
+    executable: /bin/bash
+  become: yes
+  shell: |
+    echo "[$(date +%H:%M:%S)]: Updating the MOTD..."
+    # Force color terminal
+    sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' /root/.bashrc
+    sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/g' /home/vagrant/.bashrc
+    # Remove some stock Ubuntu MOTD content
+    chmod -x /etc/update-motd.d/10-help-text
+    # Copy the MOTD
+    cp /resources/20-motd /etc/update-motd.d/
+    chmod +x /etc/update-motd.d/20-motd
+  register: modify_motd
+  failed_when: "'error' in modify_motd.stderr"
+
+- name: Install Pip, Unzip and TraceRoute
+  become: yes
+  apt:
+    update_cache: yes
+    pkg:
+    - python-pip
+    - unzip
+    - traceroute
