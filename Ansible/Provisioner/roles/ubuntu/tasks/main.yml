@@ -47,7 +47,7 @@
   register: modify_motd
   failed_when: "'error' in modify_motd.stderr"
 
-- name: Install Pip, Unzip and TraceRoute
+- name: Install Linux Tools
   become: yes
   apt:
     update_cache: yes
@@ -55,3 +55,4 @@
     - python-pip
     - unzip
     - traceroute
+    - mc
