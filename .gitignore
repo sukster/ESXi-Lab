@@ -6,3 +6,4 @@ Terraform/Provisioner/terraform.tfstate
 Terraform/Provisioner/.terraform/**
 Packer/Ubuntu1804/packer_cache/**
 Packer/Ubuntu1804/variables.json
+Packer/Ubuntu1804/output-vmware-iso/**
