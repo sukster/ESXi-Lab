@@ -1,9 +1,8 @@
 Ansible/Provisioner/resources/ovftool.bundle
-Packer/Ubuntu1804/packer_cache/a37af95ab12e665ba168128cde2f3662740b21a2.iso
-Packer/Ubuntu1804/packer_cache/a37af95ab12e665ba168128cde2f3662740b21a2.iso.lock
-Packer/Windows_10/packer_cache/d48c36ef1e2c29895cbf01e82d405f0d93f875a4.iso
-Packer/Windows_10/packer_cache/d48c36ef1e2c29895cbf01e82d405f0d93f875a4.iso.lock
-Packer/Windows_2016/packer_cache/00a4e134d75c06d102dc2dc96a8f6f02b165d998.iso
-Packer/Windows_2016/packer_cache/00a4e134d75c06d102dc2dc96a8f6f02b165d998.iso.lock
-Packer/Windows_2016/packer_cache/d48c36ef1e2c29895cbf01e82d405f0d93f875a4.iso
-Packer/Windows_2016/packer_cache/d48c36ef1e2c29895cbf01e82d405f0d93f875a4.iso.lock
+Packer/Ubuntu1804/packer_cache/**
+Packer/Windows_10/packer_cache/**
+Packer/Windows_2016/packer_cache/**
+Terraform/Provisioner/terraform.tfstate
+Terraform/Provisioner/.terraform/**
+Packer/Ubuntu1804/packer_cache/**
+Packer/Ubuntu1804/variables.json
