@@ -9,6 +9,7 @@
       "remote_password": "{{user `esxi_password`}}",
       "remote_type": "esx5",
       "type": "vmware-iso",
+      "skip_export": true,
       "vm_name":"Windows10",
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",

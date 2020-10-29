@@ -10,6 +10,7 @@
       "remote_type": "esx5",
       "vm_name":"WindowsServer2016",
       "type": "vmware-iso",
+      "skip_export": true,
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",

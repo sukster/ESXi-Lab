@@ -47,6 +47,7 @@
             "ssh_timeout": "10000s",
             "pause_before_connecting": "10m",
             "tools_upload_flavor": "linux",
+            "skip_export": true,
             "type": "vmware-iso",
             "vm_name": "Ubuntu1804",
             "memory": "{{ user `memory` }}",
