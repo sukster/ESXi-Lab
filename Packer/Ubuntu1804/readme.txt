@@ -4,6 +4,8 @@
 	- scripts directory
 	- update path to the latest Ubuntu image in the ubuntu1804_esxi.json
 
-2. Configure the variables in variables.json template. Leave the password variable empty.
+2. Configure the variables in variables.json template. Leave the password variable empty
 
-3. From the directory run: packer build -var-file variables.json -var esxi_password=$my_esxi_password$ ubuntu1804_esxi.json
+3. If output-vmware-iso directory exists, make sure you delete it before running packer build
+
+4. From the directory run: packer build -var-file variables.json -var esxi_password=$my_esxi_password$ ubuntu1804_esxi.json
