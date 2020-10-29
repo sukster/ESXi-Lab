@@ -57,10 +57,11 @@
     - traceroute
     - mc
 
-- name: Mount an NFS volume
-  ansible.posix.mount:
-    src: 192.168.2.200:/volume1/VMs
-    path: /mnt/nfs/VMs
-    opts: rw,sync,hard,intr
-    state: mounted
-    fstype: nfs
+#- name: Mount NFS volume on NAS
+#  become: yes
+#  mount:
+#    src: 192.168.2.200:/volume1/VMs
+#    path: /home/vagrant/nfs/VMs
+#    opts: rw,sync,hard,intr
+#    state: mounted
+#    fstype: nfs

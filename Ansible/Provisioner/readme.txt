@@ -15,9 +15,11 @@ Note: eth0 is on "VM Network" and eth1 is on "HostOnly Network"
 
 3. Review the default route being added under roles/ubuntu/tasks/main.yml and change it if needed or uncomment it
 
-4. Download the OVF Tool from my.vmware.com, rename the file simply to "ovftool.bundle" and place it into the resources directory
+4. Review the NFS mount point and permissions under roles/ubuntu/tasks/main.yml and change them if needed or uncomment them
 
-5. Then from directory run:
+5. Download the OVF Tool from my.vmware.com, rename the file simply to "ovftool.bundle" and place it into the resources directory
+
+6. Then from directory run:
 
 ansible-playbook -vvv -i inventory.yml provisioner.yml
 
