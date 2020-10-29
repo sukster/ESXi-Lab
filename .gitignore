@@ -3,7 +3,11 @@ Packer/Ubuntu1804/packer_cache/**
 Packer/Windows_10/packer_cache/**
 Packer/Windows_2016/packer_cache/**
 Terraform/Provisioner/terraform.tfstate
+Terraform/Provisioner/terraform.tfstate.backup
 Terraform/Provisioner/.terraform/**
-Packer/Ubuntu1804/packer_cache/**
 Packer/Ubuntu1804/variables.json
 Packer/Ubuntu1804/output-vmware-iso/**
+Packer/Windows_10/variables.json
+Packer/Windows_10/output-vmware-iso/**
+Packer/Windows_2016/variables.json
+Packer/Windows_2016/output-vmware-iso/**
