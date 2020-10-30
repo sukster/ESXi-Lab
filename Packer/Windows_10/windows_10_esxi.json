@@ -3,12 +3,14 @@
     {
       "vnc_disable_password": true,
       "keep_registered": true,
-      "remote_datastore": "{{user `esxi_datastore`}}",
-      "remote_host": "{{user `esxi_host`}}",
-      "remote_username": "{{user `esxi_username`}}",
-      "remote_password": "{{user `esxi_password`}}",
+      "remote_datastore": "{{user `remote_datastore`}}",
+      "remote_host": "{{user `remote_host`}}",
+      "remote_username": "{{user `remote_username`}}",
+      "remote_password": "{{user `remote_password`}}",
       "remote_type": "esx5",
-      "remote_output_directory": "{{user `remote_output_directory`}}",
+      "remote_cache_datastore": "{{user `remote_cache_datastore`}}",
+      "remote_cache_directory": "{{user `remote_cache_directory`}}",
+      "output_directory": "{{user `output_directory`}}",
       "type": "vmware-iso",
       "skip_export": true,
       "vm_name":"Windows10",
@@ -90,14 +92,9 @@
     }
   ],
   "variables": {
-    "esxi_datastore": "",
-    "esxi_host": "",
-    "esxi_username": "",
-    "esxi_password": "",
     "iso_checksum": "sha256:ab4862ba7d1644c27f27516d24cb21e6b39234eb3301e5f1fb365a78b22f79b3",
     "iso_url": "https://software-download.microsoft.com/download/pr/18362.30.190401-1528.19h1_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso",
     "autounattend": "{{template_dir}}/answer_files/10/Autounattend.xml",
     "disk_size": "61440"
   }
 }
-
