@@ -57,21 +57,21 @@
     - traceroute
     - mc
 
-- name: Mount NFS volume on NAS
-  become: yes
-  mount:
-    src: 192.168.2.200:/volume1/VMs
-    path: /mnt/nfs/volume1/VMs
-    opts: rw,auto,noexec
-    state: mounted
-    fstype: nfs
+#- name: Mount NFS volume on NAS
+#  become: yes
+#  mount:
+#    src: 192.168.2.200:/volume1/VMs
+#    path: /mnt/nfs/volume1/VMs
+#    opts: rw,auto,noexec
+#    state: mounted
+#    fstype: nfs
 
-- name: Change NFS mountpoint permissions
-  become: yes
-  file:
-    state: directory
-    path: /mnt/nfs/volume1/VMs
-    owner: vagrant
-    group: vagrant
-    recurse: yes
-    mode: 0770
+#- name: Change NFS mountpoint permissions
+#  become: yes
+#  file:
+#    state: directory
+#    path: /mnt/nfs/volume1/VMs
+#    owner: vagrant
+#    group: vagrant
+#    recurse: yes
+#    mode: 0770
