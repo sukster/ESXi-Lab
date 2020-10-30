@@ -4,4 +4,5 @@
     "esxi_username": "root",
     "esxi_password": "",
     "esxi_network_with_dhcp_and_internet": "VM Network"
+    "iso_target_path": "/mnt/nfs/volume1/VMs/_ISOs/packer_cache
 }
