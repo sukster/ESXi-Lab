@@ -4,8 +4,8 @@
     "esxi_username": "root",
     "esxi_password": "",
     "esxi_network_with_dhcp_and_internet": "VM Network",
-    "iso_target_path": "/mnt/nfs/volume1/VMs/_ISOs/Windows_10",
-    "esxi_cache_datastore": "Remote_Synology",
+    "iso_target_path": "",
+    "esxi_cache_datastore": "Local_NVMe",
     "esxi_cache_directory": "_ISOs/Windows_10",
-    "output_directory": "/mnt/nfs/volume1/VMs/_OVFs/vSphere/Windows_10"
+    "output_directory": ""
 }
