@@ -3,17 +3,21 @@
     {
       "vnc_disable_password": true,
       "keep_registered": true,
-      "remote_datastore": "{{user `esxi_datastore`}}",
-      "remote_host": "{{user `esxi_host`}}",
-      "remote_username": "{{user `esxi_username`}}",
-      "remote_password": "{{user `esxi_password`}}",
+      "remote_datastore": "{{user `remote_datastore`}}",
+      "remote_host": "{{user `remote_host`}}",
+      "remote_username": "{{user `remote_username`}}",
+      "remote_password": "{{user `remote_password`}}",
       "remote_type": "esx5",
+      "remote_cache_datastore": "{{user `remote_cache_datastore`}}",
+      "remote_cache_directory": "{{user `remote_cache_directory`}}",
+      "output_directory": "{{user `output_directory`}}",
       "vm_name":"WindowsServer2016",
       "type": "vmware-iso",
       "skip_export": true,
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
+      "iso_target_path": "{{user `iso_target_path`}}",
       "headless": false,
       "boot_wait": "2m",
       "winrm_username": "vagrant",
@@ -37,7 +41,7 @@
         "{{template_dir}}/scripts/win-updates.ps1"
       ],
       "vmx_data": {
-        "ethernet0.networkName": "{{user `esxi_network_with_dhcp_and_internet`}}",
+        "ethernet0.networkName": "{{user `remote_network_with_dhcp_and_internet`}}",
         "memsize": "2048",
         "numvcpus": "2",
         "scsi0.virtualDev": "lsisas1068"
@@ -75,10 +79,6 @@
     }
   ],
   "variables": {
-    "esxi_datastore": "",
-    "esxi_host": "",
-    "esxi_username": "",
-    "esxi_password": "",
     "iso_url": "https://software-download.microsoft.com/download/pr/Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO",
     "iso_checksum": "md5:70721288BBCDFE3239D8F8C0FAE55F1F",
     "autounattend": "{{template_dir}}/answer_files/2016/Autounattend.xml"
