@@ -3,7 +3,7 @@
     "remote_datastore": "Local_NVMe",
     "remote_username": "root",
     "remote_password": "",
-    "esxi_network_with_dhcp_and_internet": "VM Network",
+    "remote_network_with_dhcp_and_internet": "VM Network",
     "iso_target_path": "/mnt/nfs/volume1/VMs/_ISOs/Windows_10",
     "remote_cache_datastore": "Remote_Synology",
     "remote_cache_directory": "_ISOs/Windows_10",
