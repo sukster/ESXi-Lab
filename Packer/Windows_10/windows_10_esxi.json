@@ -3,13 +3,13 @@
     {
       "vnc_disable_password": true,
       "keep_registered": true,
-      "remote_datastore": "{{user `remote_datastore`}}",
-      "remote_host": "{{user `remote_host`}}",
-      "remote_username": "{{user `remote_username`}}",
-      "remote_password": "{{user `remote_password`}}",
+      "remote_datastore": "{{user `esxi_datastore`}}",
+      "remote_host": "{{user `esxi_host`}}",
+      "remote_username": "{{user `esxi_username`}}",
+      "remote_password": "{{user `esxi_password`}}",
       "remote_type": "esx5",
-      "remote_cache_datastore": "{{user `remote_cache_datastore`}}",
-      "remote_cache_directory": "{{user `remote_cache_directory`}}",
+      "remote_cache_datastore": "{{user `esxi_cache_datastore`}}",
+      "remote_cache_directory": "{{user `esxi_cache_directory`}}",
       "output_directory": "{{user `output_directory`}}",
       "type": "vmware-iso",
       "skip_export": true,
@@ -46,7 +46,7 @@
         "{{template_dir}}/scripts/sysprep.bat"
       ],
       "vmx_data": {
-        "ethernet0.networkName": "{{user `remote_network_with_dhcp_and_internet`}}",
+        "ethernet0.networkName": "{{user `esxi_network_with_dhcp_and_internet`}}",
         "memsize": "2048",
         "numvcpus": "2",
         "scsi0.virtualDev": "lsisas1068"
