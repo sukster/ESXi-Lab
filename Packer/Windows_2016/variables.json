@@ -1,11 +1,11 @@
 {
-    "remote_host": "192.168.2.202",
-    "remote_datastore": "Local_NVMe",
-    "remote_username": "root",
-    "remote_password": "",
-    "remote_network_with_dhcp_and_internet": "VM Network",
+    "esxi_host": "192.168.2.202",
+    "esxi_datastore": "Local_NVMe",
+    "esxi_username": "root",
+    "esxi_password": "",
+    "esxi_network_with_dhcp_and_internet": "VM Network",
     "iso_target_path": "/mnt/nfs/volume1/VMs/_ISOs/Windows_2016",
-    "remote_cache_datastore": "Remote_Synology",
-    "remote_cache_directory": "_ISOs/Windows_2016",
+    "esxi_cache_datastore": "Remote_Synology",
+    "esxi_cache_directory": "_ISOs/Windows_2016",
     "output_directory": "/mnt/nfs/volume1/VMs/_OVFs/vSphere/Windows_2016"
 }
