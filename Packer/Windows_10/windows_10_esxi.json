@@ -8,6 +8,7 @@
       "remote_username": "{{user `esxi_username`}}",
       "remote_password": "{{user `esxi_password`}}",
       "remote_type": "esx5",
+      "remote_output_directory": "{{user `remote_output_directory`}}"
       "type": "vmware-iso",
       "skip_export": true,
       "vm_name":"Windows10",
