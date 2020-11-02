@@ -4,8 +4,8 @@
     "esxi_username": "root",
     "esxi_password": "",
     "esxi_network_with_dhcp_and_internet": "VM Network",
-    "iso_target_path": "",
+    "iso_target_path": "download_iso",
     "esxi_cache_datastore": "Local_NVMe",
     "esxi_cache_directory": "_ISOs/Centos78",
-    "output_directory": ""
+    "output_directory": "export_ovf"
 }
