@@ -6,6 +6,6 @@
     "esxi_network_with_dhcp_and_internet": "VM Network",
     "iso_target_path": "",
     "esxi_cache_datastore": "Local_NVMe",
-    "esxi_cache_directory": "_ISOs/Ubuntu1804",
+    "esxi_cache_directory": "_ISOs/Centos78",
     "output_directory": ""
 }

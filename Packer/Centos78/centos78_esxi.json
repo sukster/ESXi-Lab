@@ -1,0 +1,95 @@
+{
+    "builders": [
+        {
+            "boot_command": [
+              "<up><wait><tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{user `ks_path`}}<enter><wait>"
+            ],
+            "boot_wait": "10s",
+            "keep_registered": true,
+            "remote_datastore": "{{user `esxi_datastore`}}",
+            "remote_host": "{{user `esxi_host`}}",
+            "remote_username": "{{user `esxi_username`}}",
+            "remote_password": "{{user `esxi_password`}}",
+            "remote_type": "esx5",
+	        "remote_cache_datastore": "{{user `esxi_cache_datastore`}}",
+            "remote_cache_directory": "{{user `esxi_cache_directory`}}",
+            "output_directory": "{{user `output_directory`}}",
+            "cpus": "{{ user `cpus` }}",
+            "disk_size": "{{user `disk_size`}}",
+            "guest_os_type": "centos-64",
+            "headless": "{{ user `headless` }}",
+            "http_directory": "{{user `http_directory`}}",
+            "iso_checksum": "{{user `iso_checksum`}}",
+            "iso_url": "{{user `mirror`}}/{{user `mirror_directory`}}/{{user `iso_name`}}",
+            "iso_target_path": "{{user `iso_target_path`}}",
+            "memory": "{{ user `memory` }}",
+            "shutdown_command": "echo 'vagrant' | sudo -S /sbin/halt -h -p",
+            "ssh_password": "vagrant",
+            "ssh_port": 22,
+            "ssh_timeout": "10000s",
+            "ssh_username": "vagrant",
+            "vnc_disable_password": true,
+            "vnc_port_min": 5900,
+            "vnc_port_max": 5980,
+            "tools_upload_flavor": "linux",
+            "skip_export": true,
+            "type": "vmware-iso",
+            "vm_name": "Centos78",
+            "vmx_data": {
+              "cpuid.coresPerSocket": "1",
+              "ethernet0.networkName": "{{user `esxi_network_with_dhcp_and_internet` }}",
+              "ethernet0.pciSlotNumber": "32"
+            }
+          }
+    ],
+    "post-processors": [
+        {
+          "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
+          "type": "vagrant"
+        }
+      ],
+    "provisioners": [
+        {
+          "environment_vars": [
+            "HOME_DIR=/home/vagrant"
+          ],
+          "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E sh -eux '{{.Path}}'",
+          "expect_disconnect": true,
+          "scripts": [
+            "{{template_dir}}/scripts/update.sh",
+            "{{template_dir}}/../_common/motd.sh",
+            "{{template_dir}}/../_common/sshd.sh",
+            "{{template_dir}}/scripts/networking.sh",
+            "{{template_dir}}/../_common/vagrant.sh",
+            "{{template_dir}}/../_common/vmware.sh",
+            "{{template_dir}}/../_common/parallels.sh",
+            "{{template_dir}}/scripts/cleanup.sh",
+            "{{template_dir}}/../_common/minimize.sh"
+          ],
+          "type": "shell"
+        }
+      ],
+
+    "variables": {
+        "box_basename": "centos-7.8",
+        "http_directory": "{{template_dir}}/http",
+        "build_directory": "../../builds",
+        "build_timestamp": "{{isotime \"20060102150405\"}}",
+        "cpus": "1",
+        "disk_size": "65536",
+        "git_revision": "__unknown_git_revision__",
+        "headless": "false",
+        "guest_additions_url": "",
+        "iso_checksum": "659691c28a0e672558b003d223f83938f254b39875ee7559d1a4a14c79173193",
+        "iso_name": "CentOS-7-x86_64-Minimal-2003.iso",
+        "memory": "1024",
+        "mirror": "http://mirrors.kernel.org/centos",
+        "mirror_directory": "7.8.2003/isos/x86_64",
+        "ks_path": "7/ks.cfg",
+        "name": "centos-7.8",
+        "no_proxy": "{{env `no_proxy`}}",
+        "preseed_path": "preseed.cfg",
+        "template": "centos-7.8-x86_64",
+        "version": "TIMESTAMP"
+    }
+}
