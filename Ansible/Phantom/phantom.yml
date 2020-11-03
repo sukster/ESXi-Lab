@@ -1,0 +1,5 @@
+- hosts: 192.168.2.167
+  gather_facts: False
+  become: true
+  roles:
+    - phantom
