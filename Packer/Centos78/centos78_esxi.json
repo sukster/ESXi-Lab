@@ -74,7 +74,7 @@
         "box_basename": "centos-7.8",
         "http_directory": "{{template_dir}}/http",
         "build_timestamp": "{{isotime \"20060102150405\"}}",
-        "cpus": "1",
+        "cpus": "2",
         "disk_size": "65536",
         "headless": "false",
         "guest_additions_url": "",
