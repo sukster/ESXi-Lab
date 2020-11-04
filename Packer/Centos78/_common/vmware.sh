@@ -12,25 +12,15 @@ vmware-iso|vmware-vmx)
 
     mkdir -p /tmp/vmware;
     mkdir -p /tmp/vmware-archive;
-    mount -o loop $HOME_DIR/linux.iso /tmp/vmware;
+    mount -o loop "$HOME_DIR"/linux.iso /tmp/vmware;
 
-    TOOLS_PATH="`ls /tmp/vmware/VMwareTools-*.tar.gz`";
-    VER="`echo "${TOOLS_PATH}" | cut -f2 -d'-'`";
-    MAJ_VER="`echo ${VER} | cut -d '.' -f 1`";
-
-    if [ -f "/bin/dnf" ]; then
-        echo "Installing deps for the vmware tools"
-        dnf install -y perl gcc make kernel-headers kernel-devel
-    elif [ -f "/bin/yum" ] || [ -f "/usr/bin/yum" ]; then
-        echo "Installing deps for the vmware tools"
-        yum install -y perl gcc make kernel-headers kernel-devel
-    fi
+    TOOLS_PATH="$(ls /tmp/vmware/VMwareTools-*.tar.gz)";
+    VER="$(echo "${TOOLS_PATH}" | cut -f2 -d'-')";
+    MAJ_VER="$(echo "${VER}" | cut -d '.' -f 1)";
 
     echo "VMware Tools Version: $VER";
 
-    echo "Expanding the tools archive"
-    tar xzf ${TOOLS_PATH} -C /tmp/vmware-archive;
-    echo "Installing tools"
+    tar xzf "${TOOLS_PATH}" -C /tmp/vmware-archive;
     if [ "${MAJ_VER}" -lt "10" ]; then
         /tmp/vmware-archive/vmware-tools-distrib/vmware-install.pl --default;
     else
@@ -39,6 +29,6 @@ vmware-iso|vmware-vmx)
     umount /tmp/vmware;
     rm -rf  /tmp/vmware;
     rm -rf  /tmp/vmware-archive;
-    rm -f $HOME_DIR/*.iso;
+    rm -f "$HOME_DIR"/*.iso;
     ;;
 esac

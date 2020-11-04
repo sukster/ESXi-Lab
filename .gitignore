@@ -11,3 +11,10 @@ Packer/Windows_10/variables.json
 Packer/Windows_10/export_ovf/**
 Packer/Windows_2016/variables.json
 Packer/Windows_2016/export_ovf/**
+Packer/Centos78/download_iso/**
+Packer/Centos78/variables.json
+Packer/Centos78/export_ovf/**
+Packer/Centos78/packer_cache/**
+Packer/Ubuntu1804/packer_cache/**
+Packer/Windows_10/packer_cache/**
+Packer/Windows_2016/packer_cache/**

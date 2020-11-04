@@ -32,7 +32,7 @@
             "vnc_port_min": 5900,
             "vnc_port_max": 5980,
             "tools_upload_flavor": "linux",
-            "skip_export": true,
+            "skip_export": false,
             "type": "vmware-iso",
             "vm_name": "Centos78",
             "vmx_data": {
@@ -61,7 +61,6 @@
             "{{template_dir}}/_common/sshd.sh",
             "{{template_dir}}/scripts/networking.sh",
             "{{template_dir}}/_common/vagrant.sh",
-            "{{template_dir}}/_common/vmware.sh",
             "{{template_dir}}/_common/parallels.sh",
             "{{template_dir}}/scripts/cleanup.sh",
             "{{template_dir}}/_common/minimize.sh"
@@ -75,7 +74,7 @@
         "http_directory": "{{template_dir}}/http",
         "build_timestamp": "{{isotime \"20060102150405\"}}",
         "cpus": "2",
-        "disk_size": "65536",
+        "disk_size": "30000",
         "headless": "false",
         "guest_additions_url": "",
         "iso_checksum": "659691c28a0e672558b003d223f83938f254b39875ee7559d1a4a14c79173193",
