@@ -1,6 +1,5 @@
 ---
 # Install Phantom from RPM on a fresh CentOS 7 instance
-
 - name: check if phantom is installed
   stat: path=/opt/phantom
   register: phantom_path
