@@ -4,12 +4,12 @@
   
   vars_prompt:
   
-  - name: Prompt for username
+  - name: username
     prompt: Enter Phantom Community username
     unsafe: yes
     private: yes
     
-  - name: Prompt for password
+  - name: password
     prompt: Enter Phantom Community password
     unsafe: yes
     private: yes
