@@ -1,5 +1,18 @@
 - hosts: 192.168.2.167
   gather_facts: False
   become: true
+  
+  vars_prompt:
+  
+  - name: Prompt for username
+    prompt: Enter Phantom Community username
+    unsafe: yes
+    private: yes
+    
+  - name: Prompt for password
+    prompt: Enter Phantom Community password
+    unsafe: yes
+    private: yes
+  
   roles:
     - phantom
