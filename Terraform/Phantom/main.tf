@@ -26,15 +26,15 @@ resource "esxi_guest" "phantom" {
   numvcpus           = "2"
   resource_pool_name = "/"
   power              = "on"
-  clone_from_vm = "centos78"
+  clone_from_vm = "Centos78"
 
-    provisioner "remote-exec" {
-#    inline = [
-#      "sudo ifconfig eth0 up",
-#      "sudo ifconfig eth1 up",
-#      "sudo dhclient eth1",
-#      "sudo route add default gw 192.168.2.254"
-#    ]
+  provisioner "remote-exec" {
+    inline = [
+      "sudo ifconfig eth0 up",
+      "sudo ifconfig eth1 up",
+      "sudo dhclient eth1",
+      "sudo route add default gw 192.168.2.254"
+    ]
 
     connection {
       host        = self.ip_address

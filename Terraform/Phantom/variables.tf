@@ -4,7 +4,7 @@
 #  Change these defaults to fit your needs!
 
 variable "esxi_hostname" {
-  default = "192.168.2.202"
+  default = "192.168.2.203"
 }
 
 variable "esxi_hostport" {
