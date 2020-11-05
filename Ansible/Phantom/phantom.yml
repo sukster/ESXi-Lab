@@ -7,13 +7,18 @@
   - name: phantom_community_username
     prompt: Enter Phantom community username
     unsafe: yes
-    private: yes
+    private: no
     
   - name: phantom_community_password
     prompt: Enter Phantom community password
     unsafe: yes
-    private: yes
+    private: no
   
+  - name: phantom_admin_password
+    prompt: Set new Phantom admin password
+    unsafe: yes
+    private: no
+
   roles:
     - phantom
   
