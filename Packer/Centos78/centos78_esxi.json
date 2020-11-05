@@ -32,7 +32,7 @@
             "vnc_port_min": 5900,
             "vnc_port_max": 5980,
             "tools_upload_flavor": "linux",
-            "skip_export": false,
+            "skip_export": true,
             "type": "vmware-iso",
             "vm_name": "Centos78",
             "vmx_data": {
@@ -42,12 +42,6 @@
             }
           }
     ],
-    "post-processors": [
-        {
-          "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
-          "type": "vagrant"
-        }
-      ],
     "provisioners": [
         {
           "environment_vars": [
