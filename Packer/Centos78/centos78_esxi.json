@@ -42,9 +42,7 @@
               "svga.autodetect": "true",
               "isolation.tools.copy.disable": "true",
               "isolation.tools.paste.disable": "true",
-              "isolation.tools.setGUIOptions.enable": "false",
-              "svga.vgaonly": "true",
-              "mks.enable3d": "false"
+              "isolation.tools.setGUIOptions.enable": "false"
             }
           }
     ],
