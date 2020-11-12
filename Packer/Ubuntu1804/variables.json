@@ -1,5 +1,5 @@
 {
-    "esxi_host": "192.168.2.202",
+    "esxi_host": "192.168.2.203",
     "esxi_datastore": "Local_NVMe",
     "esxi_username": "root",
     "esxi_password": "",

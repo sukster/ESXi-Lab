@@ -44,17 +44,7 @@
               "isolation.tools.paste.disable": "true",
               "isolation.tools.setGUIOptions.enable": "false",
               "svga.vgaonly": "true",
-              "mks.enable3d": "false",
-              "isolation.tools.unity.push.update.disable": "true",
-              "isolation.tools.ghi.launchmenu.change": "true",
-              "isolation.tools.memSchedFakeSampleStats.disable": "true",
-              "isolation.tools.getCreds.disable": "true",
-              "isolation.bios.bbs.disable": "true",
-              "isolation.tools.hgfsServerSet.disable": "true",
-              "isolation.tools.hgfs.disable": "true",
-              "isolation.device.connectable.disable": "true",
-              "isolation.device.edit.disable": "true",
-              "isolation.tools.setinfo.disable": "true"
+              "mks.enable3d": "false"
             }
           }
     ],
