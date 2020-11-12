@@ -21,3 +21,6 @@ Packer/Windows_2016/packer_cache/**
 Terraform/Phantom/.terraform/**
 Terraform/Phantom/terraform.tfstate
 Terraform/Phantom/terraform.tfstate.backup
+Terraform/Win10_Project1/.terraform/**
+Terraform/Win10_Project1/terraform.tfstate
+Terraform/Win10_Project1/terraform.tfstate.backup
