@@ -1,15 +1,15 @@
 1. Configure the live IP address of the host in the inventory.yml
 
-2. Edit 01-netcfg.yaml under the resources directory and configure it as needed e.g.:
+2. Edit 01-netcfg.yaml under the resources directory and configure the static IP address for eth0 which can be reached from home network e.g.:
 
 network:
   version: 2
   ethernets:
     eth0:
-      dhcp4: true
-    eth1:
       dhcp4: false
-      addresses: [192.168.38.105/24]
+      addresses: [192.168.2.231/24]
+    eth1:
+      dhcp4: true
 
 Note: eth0 is on "VM Network" and eth1 is on "HostOnly Network"
 
