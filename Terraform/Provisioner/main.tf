@@ -22,8 +22,8 @@ resource "esxi_guest" "provisioner" {
   boot_disk_type = "thin"
   boot_disk_size = "35"
 
-  memsize            = "2048"
-  numvcpus           = "2"
+  memsize            = "16384"
+  numvcpus           = "8"
   resource_pool_name = "/"
   power              = "on"
   clone_from_vm = "Ubuntu1804"
