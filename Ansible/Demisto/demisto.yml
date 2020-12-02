@@ -1,0 +1,15 @@
+- hosts: demisto
+  gather_facts: False
+  become: true
+  
+  vars_prompt:
+  
+  - name: demisto_direct_download_url
+    prompt: Enter direct download URL
+    unsafe: yes
+    private: no
+
+  roles:
+    - demisto
+  
+  tags: demisto

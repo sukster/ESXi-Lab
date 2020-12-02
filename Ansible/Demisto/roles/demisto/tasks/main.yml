@@ -1,0 +1,5 @@
+---
+# This playbook contains common tasks in this role
+
+- include: install_demisto.yml
+- include: configure_demisto.yml

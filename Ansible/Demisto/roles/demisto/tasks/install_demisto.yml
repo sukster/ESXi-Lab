@@ -1,0 +1,48 @@
+---
+- name: Set hostname
+  hostname:
+    name: demisto
+  become: yes
+
+- name: Check if demisto is installed
+  stat: path=/usr/local/demisto
+  register: demisto_path
+
+- name: Debug print if demisto is installed
+  debug: msg='Demisto is already installed under /usr/local/demisto'
+  when: demisto_path.stat.exists
+
+- name: Download Demisto install script
+  get_url:
+    url: '{{demisto_direct_download_url}}'
+    dest: /home/vagrant/demistoserver.sh
+    mode: '0755'
+
+#- name: Install Python Pip
+#  become: yes
+#  apt:
+#    name: python-pip
+
+#- name: Install Pip modules
+#  become: yes
+#  pip:
+#    name: 
+#      - pexpect
+#      - setuptools
+
+#- name: Run Demisto install script (not working)
+#  expect:
+#    timeout: 360
+#    command: /home/vagrant/demistoserver.sh
+#    responses:
+#      (.*)eula(.*): "q"
+#      (.*)Do you accept the terms(.*): "yes"
+#      (.*)Enter server HTTPS port(.*): "443"
+#      (.*)Enter name for admin user(.*): "admin"
+#      (.*)Enter password for user(.*): "Passw0rd!"
+#      (.*)Verify password(.*): "Passw0rd!"
+#      (.*)Are these configurations correct?(.*): "yes"
+#      (.*)Start the server?(.*): "yes"
+#    echo: yes
+#  become: yes
+#  no_log: false

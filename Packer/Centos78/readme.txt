@@ -6,6 +6,6 @@
 
 2. Configure the variables in variables.json template. Leave the password variable empty
 
-3. If output-vmware-iso directory exists, make sure you delete it before running packer build
+3. If export_ovf directory exists, make sure you delete it before running packer build
 
 4. From the directory run: packer build -var-file variables.json -var esxi_password=$my_esxi_password$ centos78_esxi.json

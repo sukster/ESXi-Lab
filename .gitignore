@@ -27,3 +27,6 @@ Terraform/Win10_Project1/terraform.tfstate.backup
 Terraform/Win2016_Project1/terraform.tfstate
 Terraform/Win2016_Project1/terraform.tfstate.backup
 Terraform/Win2016_Project1/.terraform/**
+Terraform/Demisto/.terraform/**
+Terraform/Demisto/terraform.tfstate
+Terraform/Demisto/terraform.tfstate.backup
