@@ -34,9 +34,10 @@ resource "esxi_guest" "cuckoo" {
       "sudo ifconfig eth1 up",
       "sudo dhclient eth1",
       "sudo route add default gw 192.168.2.254",
-      "sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/cuckoo --gecos "Cockoo user" cuckoo",
-      "echo cuckoo:${var.cuckoo_password} | sudo chpasswd"
     ]
+
+#"sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/cuckoo --gecos "Cockoo user" cuckoo",
+#"echo cuckoo:${var.cuckoo_password} | sudo chpasswd"
 
     connection {
       host        = self.ip_address
