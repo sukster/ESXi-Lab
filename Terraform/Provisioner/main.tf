@@ -16,14 +16,14 @@ provider "esxi" {
 #########################################
 resource "esxi_guest" "provisioner" {
   guest_name = "Provisioner"
-  disk_store = "Local_NVMe"
+  disk_store = "Local_NVMe (1)"
   guestos    = "ubuntu-64"
 
   boot_disk_type = "thin"
   boot_disk_size = "35"
 
-  memsize            = "16384"
-  numvcpus           = "8"
+  memsize            = "8192"
+  numvcpus           = "4"
   resource_pool_name = "/"
   power              = "on"
   clone_from_vm = "Ubuntu1804"
@@ -33,7 +33,7 @@ resource "esxi_guest" "provisioner" {
       "sudo ifconfig eth0 up",
       "sudo ifconfig eth1 up",
       "sudo dhclient eth1",
-      "sudo route add default gw 192.168.2.254"
+    #  "sudo route add default gw 192.168.2.254"
     ]
 
     connection {

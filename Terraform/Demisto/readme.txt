@@ -4,4 +4,11 @@
 
 3. If needed configure the interface MAC addresses manually in the main.tf
 
-4. From the directory run: terraform init && terraform apply
+4. SSH into the ESXi server and run these commands to disconnect the host from the vCenter:
+/etc/init.d/vpxa stop
+/etc/init.d/hostd restart
+
+5. From the directory run: terraform init && terraform apply
+
+6. Once the terrafrom is complete, run this command in ESXi server to reconnect it with the vCenter:
+/etc/init.d/vpxa start
