@@ -2,7 +2,7 @@ network:
   version: 2
   ethernets:
     eth0:
-      dhcp4: false
-      addresses: [10.10.10.253/24]
+      dhcp4: true
+      gateway4: 10.10.10.254
     eth1:
       dhcp4: true

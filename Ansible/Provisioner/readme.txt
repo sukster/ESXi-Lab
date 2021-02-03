@@ -6,12 +6,12 @@ network:
   version: 2
   ethernets:
     eth0:
-      dhcp4: false
-      addresses: [10.10.10.253/24]
+      dhcp4: true
+      gateway4: 10.10.10.254
     eth1:
       dhcp4: true
 
-Note: eth0 is on "VM Network" and eth1 is on "HostOnly Network"
+Note: eth0 is on "VM Network" and eth1 is on "HostOnly Network". Also make sure to include the gateway4 parameter which refers to the default gateway
 
 3. Review the default route being added under roles/ubuntu/tasks/main.yml and change it if needed or uncomment it
 

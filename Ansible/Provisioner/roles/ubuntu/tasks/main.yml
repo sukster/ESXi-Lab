@@ -26,10 +26,6 @@
   shell: netplan apply
   become: yes
 
-- name: Add default gateway
-  become: yes
-  command: "route add default gw 10.10.10.254"
-
 - name: Update the MOTD
   args: 
     executable: /bin/bash
