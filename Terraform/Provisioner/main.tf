@@ -33,7 +33,7 @@ resource "esxi_guest" "provisioner" {
       "sudo ifconfig eth0 up",
       "sudo ifconfig eth1 up",
       "sudo dhclient eth1",
-    #  "sudo route add default gw 192.168.2.254"
+      "sudo route add default gw 10.10.10.254"
     ]
 
     connection {
