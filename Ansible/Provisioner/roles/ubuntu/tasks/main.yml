@@ -28,7 +28,7 @@
 
 - name: Add default gateway
   become: yes
-  command: "route add default gw 192.168.2.254"
+  command: "route add default gw 10.10.10.254"
 
 - name: Update the MOTD
   args: 

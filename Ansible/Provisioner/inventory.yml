@@ -2,7 +2,7 @@
 
 provisioner:
   hosts:
-    192.168.2.158:
+    10.10.10.11:
       ansible_user: vagrant
       ansible_password: vagrant
       ansible_port: 22
