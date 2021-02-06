@@ -12,9 +12,8 @@ variable "esxi_hostport" {
 }
 
 variable "esxi_username" {
-  default = "vagrant"
+  default = "root"
 }
 
-variable "esxi_password" {
-  default = "vagrant"
+variable "esxi_password" { # Unspecified will prompt
 }
