@@ -15,9 +15,28 @@ provider "esxi" {
 #  ESXI Guest resource
 #########################################
 
+resource "null_resource" "deactivate_vcenter" {
+
+    provisioner "remote-exec" {
+    inline = [
+      "/etc/init.d/vpxa stop",
+      "/etc/init.d/hostd restart",
+      "sleep 30"
+    ]
+
+    connection {
+      host        = var.esxi_hostname
+      type        = "ssh"
+      user        = var.esxi_username
+      password    = var.esxi_password
+    }
+  }
+}
+
 resource "esxi_guest" "win10wks1" {
+  depends_on = [null_resource.deactivate_vcenter]
   guest_name = "win10wks1"
-  disk_store = "Local_NVMe"
+  disk_store = "Local_NVMe (2)"
   guestos    = "windows9-64"
 
   boot_disk_type = "thin"
@@ -42,4 +61,22 @@ resource "esxi_guest" "win10wks1" {
   }
   guest_startup_timeout  = 45
   guest_shutdown_timeout = 30
+}
+
+resource "null_resource" "activate_vcenter" {
+    
+    depends_on = [esxi_guest.win10wks1]
+
+    provisioner "remote-exec" {
+    inline = [
+      "/etc/init.d/vpxa start"
+    ]
+
+    connection {
+      host        = var.esxi_hostname
+      type        = "ssh"
+      user        = var.esxi_username
+      password    = var.esxi_password
+    }
+  }
 }
