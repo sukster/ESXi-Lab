@@ -1,0 +1,6 @@
+---
+- hosts: win10
+  roles:
+    - win10
+    - common
+  tags: win10

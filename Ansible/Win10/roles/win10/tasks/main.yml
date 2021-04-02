@@ -1,0 +1,52 @@
+---
+
+- name: Hostname -> WIN10
+  win_hostname:
+    name: win10
+  register: res
+
+- name: Reboot
+  win_reboot:
+  when: res.reboot_required
+
+- name: Install git
+  win_chocolatey:
+    name: git
+    state: present
+
+- name: Check if existing DetectionLab directory
+  win_stat:
+    path: 'c:\DetectionLab'
+  register: dir
+
+- name: Git clone Detectionlab
+  win_shell: git clone https://github.com/clong/DetectionLab.git
+  args:
+    chdir: 'c:\'
+  when: not dir.stat.exists
+
+- name: Copy scripts to c:\vagrant
+  win_shell: Copy-Item -Recurse c:\DetectionLab\Vagrant c:\vagrant
+
+- name: Making Windows10 Great Again
+  win_shell:  .\\MakeWindows10GreatAgain.ps1
+  args:
+    chdir: 'c:\vagrant\scripts'
+
+- name: Clear Event Logs
+  win_shell: "wevtutil el | Select-String -notmatch \"Microsoft-Windows-LiveId\" | Foreach-Object {wevtutil cl \"$_\"}"
+
+- name: Install classic-shell with chocolatey
+  win_chocolatey:
+    name:
+      - classic-shell
+    state: present
+    install_args: "ADDLOCAL=ClassicStartMenu"
+
+- name: Install Office 365 Business
+  win_chocolatey:
+    name: office365business
+    state: present
+
+- name: DetectionLab Menu
+  win_shell: "\"C:\\Program Files\\Classic Shell\\ClassicStartMenu.exe -xml c:\\vagrant\\resources\\windows\\MenuSettings.xml\""

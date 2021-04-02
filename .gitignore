@@ -33,3 +33,6 @@ Terraform/Demisto/terraform.tfstate.backup
 Terraform/Viper/.terraform/**
 Terraform/Viper/terraform.tfstate
 Terraform/Viper/terraform.tfstate.backup
+Terraform/Win10/.terraform/**
+Terraform/Win10/terraform.tfstate
+Terraform/Win10/terraform.tfstate.backup
