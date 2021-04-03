@@ -58,5 +58,10 @@
     name: winlogbeat
     state: present
 
+- name: Install Splunk UF
+  win_chocolatey:
+    name: splunk-universalforwader
+    state: present
+
 - name: DetectionLab Menu
   win_shell: "\"C:\\Program Files\\Classic Shell\\ClassicStartMenu.exe -xml c:\\vagrant\\resources\\windows\\MenuSettings.xml\""
