@@ -3,3 +3,8 @@
 win10:
   hosts:
     10.10.10.24:
+      ansible_user: vagrant
+      ansible_password: vagrant
+      ansible_port: 5985
+      ansible_connection: winrm
+      ansible_winrm_server_cert_validation: ignore
