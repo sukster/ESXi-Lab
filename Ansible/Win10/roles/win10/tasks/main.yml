@@ -60,7 +60,7 @@
 
 - name: Install Splunk UF
   win_chocolatey:
-    name: splunk-universalforwader
+    name: splunk-universalforwarder
     state: present
 
 - name: DetectionLab Menu
