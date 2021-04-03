@@ -48,5 +48,15 @@
     name: office365business
     state: present
 
+- name: Install Microsoft Monitoring Agent
+  win_chocolatey:
+    name: microsoft-monitoring-agent
+    state: present
+
+- name: Install Winlogbeat
+  win_chocolatey:
+    name: winlogbeat
+    state: present
+
 - name: DetectionLab Menu
   win_shell: "\"C:\\Program Files\\Classic Shell\\ClassicStartMenu.exe -xml c:\\vagrant\\resources\\windows\\MenuSettings.xml\""
