@@ -16,7 +16,7 @@ provider "esxi" {
 #########################################
 resource "esxi_guest" "phantom" {
   guest_name = "Phantom"
-  disk_store = "Local_NVMe"
+  disk_store = "Local_NVMe (2)"
   guestos    = "centos-64"
 
   boot_disk_type = "thin"
@@ -30,10 +30,7 @@ resource "esxi_guest" "phantom" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo ifconfig eth0 up",
-      "sudo ifconfig eth1 up",
-      "sudo dhclient eth1",
-      "sudo route add default gw 192.168.2.254"
+      "sudo ifconfig eth0 up"
     ]
 
     connection {
@@ -52,11 +49,11 @@ resource "esxi_guest" "phantom" {
     nic_type        = "vmxnet3"
   }
   # This is the local network that will be used for 192.168.38.x addressing
-  network_interfaces {
-    virtual_network = var.hostonly_network
+#  network_interfaces {
+#    virtual_network = var.hostonly_network
 #    mac_address     = "00:50:56:a3:b1:c4"
-    nic_type        = "vmxnet3"
-  }
+#    nic_type        = "vmxnet3"
+#  }
   # OPTIONAL: Uncomment out this interface stanza if your vm_network doesn't 
   # provide internet access
   # network_interfaces {

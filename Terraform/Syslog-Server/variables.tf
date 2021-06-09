@@ -4,7 +4,7 @@
 #  Change these defaults to fit your needs!
 
 variable "esxi_hostname" {
-  default = "10.10.10.3"
+  default = "10.10.10.1"
 }
 
 variable "esxi_hostport" {
@@ -20,12 +20,4 @@ variable "esxi_password" { # Unspecified will prompt
 
 variable "vm_network" {
   default = "VM Network"
-}
-
-variable "nat_network" {
-  default = "NAT Network"
-}
-
-variable "hostonly_network" {
-  default = "HostOnly Network"
 }
